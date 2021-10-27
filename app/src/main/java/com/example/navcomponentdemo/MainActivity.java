@@ -20,7 +20,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final DrawerLayout drawer = findViewById(R.id.drawer_layout);
+     setNavigationData();
+       
+    }
+    
+    void setNavigationData(){
+           final DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -29,19 +34,22 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_terms, R.id.nav_contact_us, R.id.nav_share, R.id.nav_send)
                 .setDrawerLayout(drawer)
                 .build();
-        final NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+         final NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
+Log.e("menu item clicked","true");
                 menuItem.setChecked(true);
 
                 drawer.closeDrawers();
                 if (menuItem.getItemId() == R.id.nav_share)
+                    Log.e("share","true");
                     Toast.makeText(MainActivity.this, "Sharing...", Toast.LENGTH_SHORT).show();
                 else if (menuItem.getItemId() == R.id.nav_send)
+                    Log.e("rate","true");
+
                     Toast.makeText(MainActivity.this, "Rating...", Toast.LENGTH_SHORT).show();
 
                 else
