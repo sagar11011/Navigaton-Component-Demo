@@ -3,4 +3,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+        <string name="appName">Hello This is app name</string>
+        <string name="please_enter_user_name">Please enter user name.</string>
+        <string name="pleasse_enter_password">Please enter passowrd.</string>
 </resources>
