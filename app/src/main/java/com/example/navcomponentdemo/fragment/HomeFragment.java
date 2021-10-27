@@ -19,6 +19,11 @@ public class HomeFragment extends Fragment {
 
     public HomeFragment() {
         // Required empty public constructor
+int i=0;
+        Log.e("Title","This is print method");
+        int j=10;
+        Log.e("Title","Thanks for visit");
+
     }
 
 
