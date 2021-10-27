@@ -37,18 +37,19 @@ public class MainActivity extends AppCompatActivity {
          final NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+       setListner();
+    }
+    
+    void setListner(){
+ navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-Log.e("menu item clicked","true");
                 menuItem.setChecked(true);
 
                 drawer.closeDrawers();
                 if (menuItem.getItemId() == R.id.nav_share)
-                    Log.e("share","true");
                     Toast.makeText(MainActivity.this, "Sharing...", Toast.LENGTH_SHORT).show();
                 else if (menuItem.getItemId() == R.id.nav_send)
-                    Log.e("rate","true");
 
                     Toast.makeText(MainActivity.this, "Rating...", Toast.LENGTH_SHORT).show();
 
